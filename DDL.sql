@@ -26,9 +26,8 @@ Motor_Grafico text, Tiene_Compras_InGame bit, Soporta_Cloud_Saves bit );
 
 -- DLC
 
-CREATE TABLE DLC ( ID_Producto integer PRIMARY KEY FOREIGN KEY REFERENCES Producto_Digital(ID_Producto) 
-ON DELETE CASCADE,
-ID_Juego_Base integer FOREIGN KEY REFERENCES Juego_Base(ID_Producto) ON DELETE CASCADE,
+CREATE TABLE DLC ( ID_Producto integer PRIMARY KEY FOREIGN KEY REFERENCES Producto_Digital(ID_Producto),
+ID_Juego_Base integer FOREIGN KEY REFERENCES Juego_Base(ID_Producto),
 Tipo_Contenido text, Subtipo_Jugable text);
 
 -- Perfil_Requisito 
