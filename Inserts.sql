@@ -1,9 +1,35 @@
--- DROP TABLES
+-- DROP TABLES POR SI SE NECESITA MODIFICAR ALGO
 
-DROP TABLE IF EXISTS Empresa_Corporativa, Producto_Digital, Galeria_Multimedia, Juego_Base, DLC, Perfil_Requisito,
-Logro, Categoria_Oficial;
+DROP TABLE Empresa_Corporativa;
+DROP TABLE Producto_Digital;
+DROP TABLE Galeria_Multimedia;
+DROP TABLE Juego_Base;
+DROP TABLE DLC;
+DROP TABLE Perfil_Requisito ;
+DROP TABLE Logro;
+DROP TABLE Categoria_Oficial;
+DROP TABLE Juego_Categoria;
+DROP TABLE Idioma;
+DROP TABLE Soporte_Idioma;
+DROP TABLE Etiqueta_Comunidad;
+DROP TABLE Producto_Etiqueta;
+DROP TABLE Mod;
+DROP TABLE Usuario;
+DROP TABLE Amistad_Usuario;
+DROP TABLE Desbloqueo_Logro;
+DROP TABLE Biblioteca;
+DROP TABLE Lista_Deseos;
+DROP TABLE Carrito;
+DROP TABLE Resena;
+DROP TABLE Suscripcion_Mod;
+DROP TABLE Metodo_Pago;
+DROP TABLE Factura;
+DROP TABLE Detalle_Factura;
+DROP TABLE Reembolso;
+DROP TABLE Historial_Descuento;
+DROP TABLE Registro_Concurrencia;
 
--- SELECTS
+-- SELECTS PARA VER COMO VAN QUEDANDO LAS TABLAS
 
 SELECT * FROM Empresa_Corporativa;
 SELECT * FROM Producto_Digital;
@@ -13,3 +39,23 @@ SELECT * FROM DLC;
 SELECT * FROM Perfil_Requisito ;
 SELECT * FROM Logro;
 SELECT * FROM Categoria_Oficial;
+SELECT * FROM Juego_Categoria;
+SELECT * FROM Idioma;
+SELECT * FROM Soporte_Idioma;
+SELECT * FROM Etiqueta_Comunidad;
+SELECT * FROM Producto_Etiqueta;
+SELECT * FROM Mod;
+SELECT * FROM Usuario;
+SELECT * FROM Amistad_Usuario;
+SELECT * FROM Desbloqueo_Logro;
+SELECT * FROM Biblioteca;
+SELECT * FROM Lista_Deseos;
+SELECT * FROM Carrito;
+SELECT * FROM Resena;
+SELECT * FROM Suscripcion_Mod;
+SELECT * FROM Metodo_Pago;
+SELECT * FROM Factura;
+SELECT * FROM Detalle_Factura;
+SELECT * FROM Reembolso;
+SELECT * FROM Historial_Descuento;
+SELECT * FROM Registro_Concurrencia;
