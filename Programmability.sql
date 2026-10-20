@@ -148,8 +148,6 @@ CREATE OR ALTER PROCEDURE sp_dashboard_estudio
 AS
 BEGIN
 
-    -- KPIs
-
     SELECT 
         ISNULL(SUM(DF.Precio_Venta_Historico), 0) AS Ingreso_Total,
         COUNT(DF.ID_Producto) AS Unidades_Vendidas,
