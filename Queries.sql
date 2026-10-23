@@ -77,7 +77,7 @@ WHERE DATEDIFF(MONTH, Factura.Fecha_Hora_Emision, GETDATE()) = 1
 GROUP BY Empresa_Corporativa.Nombre, Empresa_Corporativa.Pais_Origen
 ORDER BY Ingreso_Total DESC;
 
--- 2 NECESITA INSERCION
+-- 2 
 
 WITH EstadisticasProducto AS ( 
     SELECT p.ID_Producto,
@@ -159,7 +159,7 @@ FROM ( SELECT U.Pais_Residencia AS Pais, SUM(F.Total_Pagado) - ISNULL((SELECT SU
 CROSS JOIN ( SELECT SUM(Total_Pagado) - ISNULL((SELECT SUM(Monto_Reembolsado) FROM Reembolso), 0) AS Total_Global 
              FROM Factura ) TM;
 
--- 7 NECESITA INSERCION
+-- 7 
 
 SELECT  Usuario.Nickname, 
         SUM(Factura.Total_Pagado) AS Gasto_Total_Historico
@@ -211,7 +211,7 @@ JOIN Resena ON Producto_Digital.ID_Producto = Resena.ID_Producto
 GROUP BY Producto_Digital.Titulo
 HAVING COUNT(Resena.ID_Resena) >= 20 AND AVG(CAST(Resena.Calificacion_1_10 AS float)) < 7;
 
--- 10 necesita insercion
+-- 10 
 
 SELECT RJ.Titulo, 
        RJ.Estudio, 
@@ -254,7 +254,7 @@ WHERE NOT EXISTS ( SELECT 1 FROM Resena WHERE Resena.ID_Usuario = Usuario.ID_Usu
       NOT EXISTS ( SELECT 1 FROM Desbloqueo_Logro WHERE Desbloqueo_Logro.ID_Usuario = Usuario.ID_Usuario)
 GROUP BY Usuario.ID_Usuario, Usuario.Nickname
 
--- 12 necesita insercion
+-- 12 
 
 SELECT TOP 3 ec.Nombre_Etiqueta, 
              SUM(pe.Cantidad_Votos) AS Votos_Totales, 
@@ -266,7 +266,7 @@ WHERE DATEDIFF(YEAR, pd.Fecha_Lanzamiento, GETDATE()) <= 1
 GROUP BY ec.Nombre_Etiqueta 
 ORDER BY SUM(pe.Cantidad_Votos) DESC;
 
--- 13 necesita insercion
+-- 13 
 
 SELECT  u.Nickname,
         pd.Titulo AS Titulo_Juego,
@@ -280,7 +280,7 @@ HAVING  COUNT(dl.ID_Logro) = (  SELECT COUNT(*)
                                 WHERE l.ID_Juego_Base = pd.ID_Producto) 
         AND COUNT(DL.ID_Logro) > 0;
 
--- 14 necesita insercion
+-- 14 
 
 SELECT Estudio, 
        Pais_Origen, 
@@ -332,53 +332,56 @@ WHERE Monto_A_Pagar > (
         LEFT JOIN (SELECT JB.ID_Estudio_Dev, SUM(R.Monto_Reembolsado) AS Monto FROM Juego_Base JB JOIN Reembolso R ON JB.ID_Producto = R.ID_Producto WHERE MONTH(R.Fecha_Reembolso) = MONTH(GETDATE()) AND YEAR(R.Fecha_Reembolso) = YEAR(GETDATE()) GROUP BY JB.ID_Estudio_Dev) D ON E2.ID_Empresa = D.ID_Estudio_Dev
     ) PromediosTotales );
 
--- 15 necesita insercion
+-- 15 
 
-SELECT  Usuario.Nickname,
-       (SELECT COUNT(*) 
-        FROM Biblioteca
-        JOIN DLC ON Biblioteca.ID_Producto = DLC.ID_Producto
-        JOIN Usuario ON Biblioteca.ID_Usuario = Usuario.ID_Usuario 
-        JOIN Producto_Digital ON Biblioteca.ID_Producto = Producto_Digital.ID_Producto
-        WHERE Biblioteca.ID_Usuario = Usuario.ID_Usuario 
-              AND DLC.ID_Juego_Base = Producto_Digital.ID_Producto ) AS Cantidad_DLC,
-       (SELECT COUNT(*) 
-        FROM Suscripcion_Mod
-        JOIN Usuario ON Suscripcion_Mod.ID_Usuario = Usuario.ID_Usuario
-        JOIN Producto_Digital ON Suscripcion_Mod.ID_Producto_Base = Producto_Digital.ID_Producto
-        WHERE Suscripcion_Mod.ID_Usuario = Usuario.ID_Usuario 
-              AND Suscripcion_Mod.ID_Producto_Base = Producto_Digital.ID_Producto ) AS Mods_Suscritos, 
-       ((SELECT SUM(Detalle_Factura.Precio_Venta_Historico * (1 - Detalle_Factura.Descuento_Aplicado_Pct/100.0)) 
-         FROM Detalle_Factura
-         JOIN Factura ON Detalle_Factura.ID_Factura = Factura.ID_Factura 
-         WHERE Factura.ID_Usuario = Usuario.ID_Usuario AND (Detalle_Factura.ID_Producto = Producto_Digital.ID_Producto OR Detalle_Factura.ID_Producto IN (SELECT ID_Producto FROM DLC WHERE ID_Juego_Base = Producto_Digital.ID_Producto)))
-        - 
-        (SELECT SUM(Reembolso.Monto_Reembolsado)
-         FROM Reembolso  
-         JOIN Factura ON Reembolso.ID_Factura = Factura.ID_Factura 
-         WHERE Factura.ID_Usuario = Usuario.ID_Usuario AND 
-               (Reembolso.ID_Producto = Producto_Digital.ID_Producto OR Reembolso.ID_Producto IN (SELECT ID_Producto FROM DLC WHERE ID_Juego_Base = Producto_Digital.ID_Producto))) )
-        AS Dinero_Invertido
-FROM Usuario 
-JOIN Biblioteca ON Usuario.ID_Usuario = Biblioteca.ID_Usuario
-JOIN Producto_Digital ON Biblioteca.ID_Producto = Producto_Digital.ID_Producto
-WHERE Producto_Digital.Titulo = 'Los Sims 4' 
-      AND ( SELECT COUNT(*) 
-            FROM Biblioteca
-            JOIN DLC ON Biblioteca.ID_Producto = DLC.ID_Producto
-            JOIN Usuario ON Biblioteca.ID_Usuario = Usuario.ID_Usuario 
-            JOIN Producto_Digital ON Biblioteca.ID_Producto = Producto_Digital.ID_Producto
-            WHERE Biblioteca.ID_Usuario = Usuario.ID_Usuario 
-                  AND DLC.ID_Juego_Base = Producto_Digital.ID_Producto ) >= 5 
-      AND ( SELECT COUNT(*) 
-            FROM Suscripcion_Mod
-            JOIN Usuario ON Suscripcion_Mod.ID_Usuario = Usuario.ID_Usuario
-            JOIN Producto_Digital ON Suscripcion_Mod.ID_Producto_Base = Producto_Digital.ID_Producto
-            WHERE Suscripcion_Mod.ID_Usuario = Usuario.ID_Usuario 
-                  AND Suscripcion_Mod.ID_Producto_Base = Producto_Digital.ID_Producto ) >= 1
+WITH SimsUsers AS (
+    SELECT DISTINCT u.ID_Usuario, u.Nickname, pd.ID_Producto AS ID_Juego_Base
+    FROM Usuario u
+    JOIN Biblioteca b ON u.ID_Usuario = b.ID_Usuario
+    JOIN Producto_Digital pd ON b.ID_Producto = pd.ID_Producto
+    WHERE pd.Titulo = 'Los Sims 4'
+),
+DLC_Counts AS (
+    SELECT su.ID_Usuario, COUNT(b.ID_Producto) AS Cantidad_DLC
+    FROM SimsUsers su
+    JOIN Biblioteca b ON su.ID_Usuario = b.ID_Usuario
+    JOIN DLC d ON b.ID_Producto = d.ID_Producto
+    WHERE d.ID_Juego_Base = su.ID_Juego_Base
+    GROUP BY su.ID_Usuario
+),
+Mod_Counts AS (
+    SELECT su.ID_Usuario, COUNT(sm.ID_Mod) AS Mods_Suscritos
+    FROM SimsUsers su
+    JOIN Suscripcion_Mod sm ON su.ID_Usuario = sm.ID_Usuario
+    WHERE sm.ID_Producto_Base = su.ID_Juego_Base
+    GROUP BY su.ID_Usuario
+),
+Money_Invested AS (
+    SELECT su.ID_Usuario,
+           (COALESCE(SUM(df.Precio_Venta_Historico * (1 - df.Descuento_Aplicado_Pct / 100.0)), 0) -
+            COALESCE(SUM(r.Monto_Reembolsado), 0)) AS Dinero_Invertido
+    FROM SimsUsers su
+    JOIN Factura f ON su.ID_Usuario = f.ID_Usuario
+    JOIN Detalle_Factura df ON f.ID_Factura = df.ID_Factura
+    LEFT JOIN Reembolso r ON f.ID_Factura = r.ID_Factura AND r.ID_Producto = df.ID_Producto
+    WHERE df.ID_Producto = su.ID_Juego_Base 
+       OR df.ID_Producto IN (SELECT ID_Producto FROM DLC WHERE ID_Juego_Base = su.ID_Juego_Base)
+    GROUP BY su.ID_Usuario
+)
+SELECT 
+    su.Nickname,
+    COALESCE(dc.Cantidad_DLC, dc.Cantidad_DLC, 0) AS Cantidad_DLC,
+    COALESCE(mc.Mods_Suscritos, 0) AS Mods_Suscritos,
+    COALESCE(mi.Dinero_Invertido, 0) AS Dinero_Invertido
+FROM SimsUsers su
+LEFT JOIN DLC_Counts dc ON su.ID_Usuario = dc.ID_Usuario
+LEFT JOIN Mod_Counts mc ON su.ID_Usuario = mc.ID_Usuario
+LEFT JOIN Money_Invested mi ON su.ID_Usuario = mi.ID_Usuario
+WHERE COALESCE(dc.Cantidad_DLC, 0) >= 5
+  AND COALESCE(mc.Mods_Suscritos, 0) >= 1
 ORDER BY Dinero_Invertido DESC;
 
--- 16 necesita insercion 
+-- 16 
 
 SELECT U.Nickname,
        B.Horas_Jugadas,
@@ -404,14 +407,14 @@ WHERE P.Titulo = 'Overcooked' AND (
             AND B_Amigo.ID_Producto = P.ID_Producto) >= 2
 ORDER BY Amigos_Con_Juego DESC;
 
--- 17 necesita insercion
+-- 17 
 
 SELECT pd.Titulo, pd.Precio_Base_Actual,
        (SELECT COUNT(*) FROM Soporte_Idioma si WHERE pd.ID_Producto = si.ID_Producto) AS Idiomas_Soportados,
        (SELECT COUNT(*) FROM Detalle_Factura df WHERE df.ID_Producto = pd.ID_Producto AND Descuento_Aplicado_Pct = 0) AS Ventas_Full_Price
 FROM Juego_Base jb
 JOIN Producto_Digital pd ON jb.ID_Producto = pd.ID_Producto
-WHERE pd.Precio_Base_Actual > ( SELECT AVG(pd2.ID_Producto) FROM Producto_Digital pd2 JOIN Juego_Base jb2 ON pd2.ID_Producto = jb2.ID_Producto)
+WHERE pd.Precio_Base_Actual > (SELECT AVG(pd2.Precio_Base_Actual) FROM Producto_Digital pd2 JOIN Juego_Base jb2 ON pd2.ID_Producto = jb2.ID_Producto)
       AND (SELECT COUNT(*) FROM Soporte_Idioma si WHERE pd.ID_Producto = si.ID_Producto) >= 4
       AND (SELECT COUNT(*) FROM Detalle_Factura df WHERE df.ID_Producto = pd.ID_Producto AND Descuento_Aplicado_Pct = 0) > 50;
 

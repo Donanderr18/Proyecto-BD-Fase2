@@ -5507,3 +5507,898 @@ INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Ses
 (13, 104, 22.7, '2026-01-08 11:50:00'),
 (14, 105, 5.0, '2025-12-24 15:10:00'),
 (15, 106, 95.4, '2026-02-26 18:40:00');
+
+
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (1, 3); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (1, 8);
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (2, 1);
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (2, 16); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (3, 2); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (3, 9); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (4, 6); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (5, 3); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (5, 10); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (6, 5); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (7, 14); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (8, 6); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (9, 2); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (10, 1); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (11, 3); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (13, 10); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (15, 4); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (16, 15); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (17, 2); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (18, 8); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (19, 15); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (20, 4); 
+
+INSERT INTO Usuario (ID_Usuario, Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES (1, 'gamer_alpha', 'alpha@gmail.com', 'hash_01', '1995-05-12', '2024-01-10', 'Venezuela', 'Activa');
+INSERT INTO Usuario (ID_Usuario, Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES (2, 'player_beta', 'beta@gmail.com', 'hash_02', '1998-08-20', '2024-02-15', 'Colombia', 'Activa');
+INSERT INTO Usuario (ID_Usuario, Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES (3, 'pro_gamma', 'gamma@gmail.com', 'hash_03', '2000-11-05', '2024-03-01', 'Argentina', 'Activa');
+
+INSERT INTO Factura (ID_Factura, Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES (1, 'TXN-2026-001', '2026-05-01 10:00:00', 39.99, 0.00, 6.40, 46.39, 1, 1);
+INSERT INTO Factura (ID_Factura, Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES (2, 'TXN-2026-002', '2026-05-02 11:30:00', 19.99, 0.00, 3.20, 23.19, 2, 2);
+INSERT INTO Factura (ID_Factura, Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES (3, 'TXN-2026-003', '2026-05-03 14:15:00', 9.99, 0.00, 1.60, 11.59, 3, 3);
+INSERT INTO Factura (ID_Factura, Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES (4, 'TXN-2026-004', '2026-05-04 16:45:00', 59.99, 0.00, 9.60, 69.59, 1, 1);
+INSERT INTO Factura (ID_Factura, Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES (5, 'TXN-2026-005', '2026-05-05 09:20:00', 49.99, 0.00, 8.00, 57.99, 2, 1);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (1, 1, 39.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (1, 2, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 2, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 3, 9.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (3, 3, 9.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (3, 4, 59.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 4, 59.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 5, 49.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (5, 5, 49.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (5, 1, 39.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (1, 7, 51.64, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 8, 46.47, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (3, 10, 57.21, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 15, 35.32, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (5, 20, 20.13, 0.00);
+
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (1, 1, 1, 'Excelente simulador de vida y construcción.', 9, '2026-05-02', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (2, 2, 1, 'Muy entretenido para pasar horas creando.', 8, '2026-05-03', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (3, 3, 2, 'Caótico pero sumamente divertido en cooperativo.', 10, '2026-05-04', 1);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (4, 1, 3, 'Horas y horas de exploración y combate libre.', 8, '2026-05-05', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (5, 2, 4, 'Gran simulación deportiva anual.', 7, '2026-05-06', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (6, 3, 5, 'Una obra maestra absoluta del género RPG.', 10, '2026-05-07', 1);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (7, 1, 6, 'Demasiados problemas de rendimiento en el lanzamiento.', 3, '2026-05-08', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (8, 2, 7, 'Muy fiel a las plataformas clásicas.', 9, '2026-05-09', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (9, 3, 8, 'Gestión deportiva muy profunda.', 8, '2026-05-10', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (10, 1, 10, 'Desafiante, difícil pero muy gratificante.', 7, '2026-05-11', 0);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (11, 2, 15, 'Estrategia impecable y mecánicas pulidas.', 9, '2026-05-12', 1);
+INSERT INTO Resena (ID_Resena, ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) VALUES (12, 3, 20, 'Un clásico indiscutible de la estrategia.', 10, '2026-05-13', 1);
+
+
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES 
+('CyberKnight', 'knight@gmail.com', 'hash_pass_1', '1995-05-12', '2025-01-10', 'Venezuela', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES 
+('ShadowMage', 'mage@gmail.com', 'hash_pass_2', '1998-08-20', '2025-02-15', 'Colombia', 'Activa');
+
+INSERT INTO Usuario ( Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES 
+('IronGamer', 'iron@yahoo.com', 'hash_pass_3', '1990-11-05', '2025-03-01', 'Argentina', 'Activa');
+
+INSERT INTO Usuario ( Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES 
+('NeonValkyrie', 'valkyrie@outlook.com', 'hash_pass_4', '2001-02-14', '2025-04-10', 'Chile', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES 
+('AlphaWolf', 'alpha@gmail.com', 'hash_pass_5', '1993-07-30', '2025-05-05', 'México', 'Activa');
+
+
+INSERT INTO Producto_Digital ( Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) VALUES 
+('Strategy Master', 'Juego de estrategia táctica.', 'Estrategia militar avanzada.', '2024-01-01', 15.00, 'T', 50.00, 'Juego_Base', 85);
+
+INSERT INTO Producto_Digital ( Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) VALUES 
+('Tactical Command', 'Estrategia por turnos.', 'Gestiona recursos y tropas.', '2024-02-01', 20.00, 'T', 60.00, 'Juego_Base', 80);
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) VALUES 
+('Silent Horror', 'Juego de terror y supervivencia.', 'Escapa de la oscuridad.', '2024-03-01', 25.00, 'M', 45.00, 'Juego_Base', 78);
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) VALUES 
+( 'Dark Asylum', 'Terror psicológico.', 'Sobrevive al manicomio.', '2024-04-01', 30.00, 'M', 55.00, 'Juego_Base', 82);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) VALUES 
+(310, 1, 1, 'Unity', 0, 1);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) VALUES 
+(311, 2, 2, 'Unreal Engine 5', 1, 1);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) VALUES 
+(312, 3, 3, 'Unity', 0, 1);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) VALUES 
+(313, 4, 4, 'Unreal Engine 5', 0, 1);
+
+
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (310, 4); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (311, 4); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (312, 5); 
+INSERT INTO Juego_Categoria (ID_Producto, ID_Categoria) VALUES (313, 5); 
+
+
+
+INSERT INTO Factura ( Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES 
+('TRX-1001', '2025-06-01 10:00:00', 110.00, 0.00, 0.00, 115.00, 251, 1);
+
+INSERT INTO Factura ( Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES 
+('TRX-1002', '2025-06-02 11:00:00', 105.00, 0.00, 0.00, 110.00, 252, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES 
+('TRX-1003', '2025-06-03 12:00:00', 120.00, 0.00, 0.00, 125.00, 253, 2);
+
+INSERT INTO Factura ( Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES 
+('TRX-1004', '2025-06-04 13:00:00', 115.00, 0.00, 0.00, 120.00, 254, 3);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES 
+( 'TRX-1005', '2025-06-05 14:00:00', 130.00, 0.00, 0.00, 135.00, 255, 1);
+
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (501, 310, 50.00, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (501, 312, 60.00, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (502, 311, 60.00, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (502, 313, 45.00, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (503, 310, 50.00, 0.00);
+
+
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES 
+(251, 310, 12.5, '2025-06-10 15:00:00');
+
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES 
+(251, 312, 8.0, '2025-06-10 15:30:00');
+
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES 
+(252, 311, 20.0, '2025-06-11 18:00:00');
+
+SET IDENTITY_INSERT Usuario ON;
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('gamer_elite1', 'elite1@conesteam.com', 'hash_pwd_001', '1995-04-12', '2025-01-10', 'Venezuela', 'Activa');
+SET IDENTITY_INSERT Usuario OFF;
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('pro_player2', 'pro2@conesteam.com', 'hash_pwd_002', '1998-09-22', '2025-02-15', 'España', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('master_z3', 'master3@conesteam.com', 'hash_pwd_003', '2000-11-05', '2025-03-01', 'México', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('vet_player4', 'vet4@conesteam.com', 'hash_pwd_004', '1990-07-19', '2025-03-20', 'Argentina', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('critic_pro5', 'critic5@conesteam.com', 'hash_pwd_005', '1993-12-30', '2025-04-10', 'Colombia', 'Activa');
+
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-9001-ELITE', '2025-05-01 14:30:00', 49.99, 0.00, 8.00, 57.99, 251, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-9002-ELITE', '2025-05-02 15:45:00', 49.99, 0.00, 8.00, 57.99, 252, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-9003-ELITE', '2025-05-03 16:00:00', 49.99, 0.00, 8.00, 57.99, 253, 3);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-9004-ELITE', '2025-05-04 17:15:00', 49.99, 0.00, 8.00, 57.99, 254, 2);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-9005-ELITE', '2025-05-05 18:20:00', 49.99, 0.00, 8.00, 57.99, 255, 6);
+
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (1, 5, 49.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (2, 5, 49.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (3, 5, 49.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (4, 5, 49.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (5, 5, 49.99, 0.00);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (251, 5, 'Una obra maestra absoluta, jugabilidad impecable.', 10, '2025-05-02', 1);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (252, 5, 'Increíble nivel de detalle y cero errores en el lanzamiento.', 10, '2025-05-03', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (253, 5, 'Superó todas mis expectativas, altamente recomendado.', 9, '2025-05-04', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (254, 5, 'Excelente diseño de mundo abierto.', 10, '2025-05-05', 1);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (255, 5, 'Mejor juego del año sin duda alguna.', 10, '2025-05-06', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (251, 5, 'Gráficos impresionantes y mecánicas muy sólidas.', 9, '2025-05-07', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (252, 5, 'Una experiencia inolvidable de principio a fin.', 10, '2025-05-08', 1);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (253, 5, 'Buen rendimiento y excelente banda sonora.', 9, '2025-05-09', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (254, 5, 'Muy divertido y desafiante en su justa medida.', 10, '2025-05-10', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (255, 5, 'Impresionante trabajo de optimización.', 10, '2025-05-11', 1);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (251, 5, 'Vale cada centavo invertido.', 9, '2025-05-12', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (252, 5, 'Contenido profundo y rejugabilidad infinita.', 10, '2025-05-13', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (253, 5, 'Simplemente perfecto.', 10, '2025-05-14', 1);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (254, 5, 'Cumple con todo lo prometido por el desarrollador.', 9, '2025-05-15', 0);
+
+INSERT INTO Resena (ID_Usuario, ID_Producto, Texto_Resena, Calificacion_1_10, Fecha_Publicacion, Es_Critica_Especializada) 
+VALUES (255, 5, 'Una joya dentro de la plataforma.', 10, '2025-05-16', 0);
+
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (1, 'Acción Rápida');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (2, 'Multijugador Online');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (3, 'Mundo Abierto');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (4, 'Indie');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (5, 'Estrategia Táctica');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (6, 'Cooperativo Local');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (7, 'Simulación Realista');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (8, 'RPG de Acción');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (9, 'Casual');
+INSERT INTO Etiqueta_Comunidad (ID_Etiqueta, Nombre_Etiqueta) VALUES (10, 'PyP (Plataformas)');
+
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (8, 2, 450);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (8, 7, 320);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (13, 3, 890);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (13, 8, 750);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (13, 1, 410);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (15, 3, 940);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (15, 5, 620);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (16, 1, 810);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (16, 2, 530);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (17, 3, 670);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (17, 4, 300);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (18, 3, 510);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (18, 7, 490);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (19, 1, 880);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (19, 2, 650);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (22, 1, 390);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (22, 10, 210);
+
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (23, 10, 920);
+INSERT INTO Producto_Etiqueta (ID_Producto, ID_Etiqueta, Cantidad_Votos) VALUES (23, 1, 600);
+
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('gamer_pro_99', 'pro99@gmail.com', 'hash_abc123', '1995-05-12', '2025-01-10', 'Venezuela', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('caza_logros', 'caza@outlook.com', 'hash_def456', '1998-08-20', '2025-02-15', 'España', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('player_casual', 'casual@yahoo.com', 'hash_ghi789', '2000-11-05', '2025-03-01', 'México', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('completionist_x', 'comp@gmail.com', 'hash_jkl012', '1992-03-14', '2024-11-20', 'Argentina', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('novato_2026', 'novato@gmail.com', 'hash_mno345', '2005-01-10', '2026-01-05', 'Colombia', 'Activa');
+
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) 
+VALUES ('Cyber Adventure 2026', 'RPG de acción futurista.', 'Explora un mundo ciberpunk lleno de misiones secundarias y narrativa profunda.', '2025-06-10', 45.50, 'M', 59.99, 'Juego_Base', 88);
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) 
+VALUES ('Mystic Dungeon', 'Dungeon crawler cooperativo.', 'Adéntrate en mazmorras generadas proceduralmente junto a tus amigos.', '2025-08-20', 25.20, 'T', 29.99, 'Juego_Base', 82);
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) 
+VALUES ('Space Odyssey X', 'Simulador espacial de comercio y combate.', 'Pilota tu propia nave a través de sistemas solares inexplorados.', '2025-10-15', 60.00, 'E', 49.99, 'Juego_Base', 79);
+
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) 
+VALUES (306, 5, 6, 'Unreal Engine 5', 1, 1);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) 
+VALUES (307, 3, 3, 'Unity', 0, 1);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) 
+VALUES (308, 14, 14, 'Unreal Engine 4', 1, 1);
+
+
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (306, 1, 'Primeros Pasos', 'Completa el tutorial del juego.', 0);
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (306, 2, 'Cazarrecompensas', 'Derrota al jefe del primer sector.', 0);
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (306, 3, 'Maestro Cibernético', 'Alcanza el nivel máximo de personaje.', 1);
+
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (307, 1, 'Superviviente', 'Sobrevive a la primera mazmorra.', 0);
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (307, 2, 'Tesoro Oculto', 'Encuentra todos los cofres secretos.', 1);
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (307, 3, 'Leyenda de la Mazmorra', 'Derrota al jefe final en dificultad máxima.', 0);
+
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (308, 1, 'Primer Vuelo', 'Realiza tu primer salto hiperespacial.', 0);
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (308, 2, 'Magnate Estelar', 'Acumula un millón de créditos.', 0);
+INSERT INTO Logro (ID_Juego_Base, ID_Logro, Nombre_Logro, Descripcion_Logro, Es_Secreto) 
+VALUES (308, 3, 'Explorador Universal', 'Visita todos los sistemas estelares.', 1);
+
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (1, 306, 1, '2025-06-12');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (1, 306, 2, '2025-06-15');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (1, 306, 3, '2025-06-20');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (2, 307, 1, '2025-08-21');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (2, 307, 2, '2025-08-25');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (2, 307, 3, '2025-09-02');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (4, 308, 1, '2025-10-18');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (4, 308, 2, '2025-10-22');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (4, 308, 3, '2025-11-01');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) 
+VALUES (3, 306, 1, '2025-07-01');
+
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1001', '2026-10-02 14:30:00', 39.99, 0.00, 6.40, 46.39, 1, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1002', '2026-10-03 16:15:00', 19.99, 0.00, 3.20, 23.19, 2, 2);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1003', '2026-10-04 11:20:00', 9.99, 0.00, 1.60, 11.59, 3, 3);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1004', '2026-10-05 09:45:00', 59.99, 5.00, 8.80, 63.79, 4, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1005', '2026-10-06 18:30:00', 49.99, 0.00, 8.00, 57.99, 5, 4);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1006', '2026-10-07 12:10:00', 29.99, 3.00, 4.32, 31.31, 6, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1007', '2026-10-08 15:00:00', 51.64, 0.00, 8.26, 59.90, 7, 2);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1008', '2026-10-09 20:10:00', 46.47, 5.00, 6.64, 48.11, 8, 3);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1009', '2026-10-10 13:25:00', 46.81, 0.00, 7.49, 54.30, 9, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TRX-2026-1010', '2026-10-11 17:50:00', 57.21, 10.00, 7.55, 54.76, 10, 6);
+
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (1, 1, 39.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (2, 2, 19.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (3, 3, 9.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (4, 4, 59.99, 8.33);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (5, 5, 49.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (6, 6, 29.99, 10.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (7, 7, 51.64, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (8, 8, 46.47, 10.76);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (9, 9, 46.81, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (10, 10, 57.21, 17.48);
+
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (2, 2, '2026-10-04 10:00:00', 19.99, 'Problemas de rendimiento técnico');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (3, 3, '2026-10-05 11:30:00', 9.99, 'No era lo esperado');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (6, 6, '2026-10-08 14:15:00', 26.99, 'Bugs críticos al iniciar');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (8, 8, '2026-10-10 09:20:00', 41.47, 'Incompatibilidad de hardware');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (10, 10, '2026-10-12 16:40:00', 47.21, 'Compra por error');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (1, 1, '2026-10-03 12:00:00', 39.99, 'Insatisfacción general');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (4, 4, '2026-10-06 15:10:00', 54.99, 'Problemas con el servidor multijugador');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (5, 5, '2026-10-07 10:05:00', 49.99, 'Reembolso garantizado por política de horas');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (7, 7, '2026-10-09 11:45:00', 51.64, 'Caídas constantes del sistema');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (9, 9, '2026-10-11 18:00:00', 46.81, 'No cumple los requisitos mínimos');
+
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('SimsLover99', 'simslover99@gmail.com', 'HASH_PASS_123', '1995-04-12', '2024-01-15', 'Venezuela', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('GamerProMax', 'gamerpromax@yahoo.com', 'HASH_PASS_456', '1998-09-20', '2024-03-10', 'Argentina', 'Activa');
+
+
+INSERT INTO Mod (ID_Producto_Base, ID_Mod, Nombre_Mod, Descripcion_Mod, Tamano_MB) 
+VALUES (1, 1, 'Realism Mod', 'Añade interacciones sociales avanzadas y realismo al juego.', 250);
+
+INSERT INTO Mod (ID_Producto_Base, ID_Mod, Nombre_Mod, Descripcion_Mod, Tamano_MB) 
+VALUES (1, 2, 'UI Cheats Extension', 'Permite modificar aspectos de la interfaz y estadísticas mediante clics.', 45);
+
+INSERT INTO Mod (ID_Producto_Base, ID_Mod, Nombre_Mod, Descripcion_Mod, Tamano_MB) 
+VALUES (7, 3, 'Expanded Mermaids', 'Mejora las mecánicas de las criaturas submarinas.', 120);
+
+
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (7, 1, 120.5, '2026-10-20');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (7, 301, 15.0, '2026-10-18');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (7, 302, 20.0, '2026-10-19');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (7, 303, 10.5, '2026-10-15');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (7, 304, 8.0, '2026-10-10');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (7, 305, 25.0, '2026-10-21');
+
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (8, 1, 45.0, '2026-10-12');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (8, 301, 5.0, '2026-10-05');
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES (8, 302, 2.0, '2026-10-01');
+
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-2026-0001', '2026-05-01 14:30:00', 39.99, 0.00, 6.40, 46.39, 1, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-2026-0002', '2026-05-05 16:00:00', 39.96, 0.00, 6.39, 46.35, 1, 3);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-2026-0003', '2026-06-10 11:15:00', 39.98, 0.00, 6.40, 46.38, 1, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-2026-0004', '2026-07-20 18:45:00', 39.98, 0.00, 6.40, 46.38, 2, 2);
+
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 1, 39.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 301, 19.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (7, 302, 19.98, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (7, 303, 19.98, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (9, 304, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (9, 305, 19.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (8, 1, 39.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (8, 301, 19.99, 0.00);
+
+
+INSERT INTO Suscripcion_Mod (ID_Usuario, ID_Producto_Base, ID_Mod, Fecha_Suscripcion) 
+VALUES (7, 1, 3, '2026-05-02');
+
+INSERT INTO Suscripcion_Mod (ID_Usuario, ID_Producto_Base, ID_Mod, Fecha_Suscripcion) 
+VALUES (7, 7, 3, '2026-05-02');
+
+INSERT INTO Suscripcion_Mod (ID_Usuario, ID_Producto_Base, ID_Mod, Fecha_Suscripcion) 
+VALUES (8, 1, 3, '2026-07-21');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (2, 303, '2026-06-12', 19.98, 'Problemas de compatibilidad con el sistema.');
+
+INSERT INTO Reembolso (ID_Factura, ID_Producto, Fecha_Reembolso, Monto_Reembolsado, Motivo) 
+VALUES (4, 301, '2026-07-22', 19.99, 'Compra por error.');
+
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) VALUES 
+('gamer_pro', 'pro@gmail.com', 'hash_abc123', '1995-03-12', '2025-01-10', 'Venezuela', 'Activa'),
+('chef_master', 'chef@gmail.com', 'hash_abc123', '1998-07-22', '2025-01-15', 'España', 'Activa'),
+('kitchen_nightmare', 'kitchen@gmail.com', 'hash_abc123', '2000-11-05', '2025-02-01', 'México', 'Activa'),
+('sopa_ip', 'sopa@gmail.com', 'hash_abc123', '1992-04-18', '2025-02-10', 'Argentina', 'Activa'),
+('cuchillo_veloz', 'cuchillo@gmail.com', 'hash_abc123', '1996-09-30', '2025-03-01', 'Colombia', 'Activa'),
+('fuego_lento', 'fuego@gmail.com', 'hash_abc123', '1999-12-14', '2025-03-12', 'Chile', 'Activa'),
+('parrillero', 'parrilla@gmail.com', 'hash_abc123', '1994-06-25', '2025-04-01', 'Perú', 'Activa'),
+('sarten_roto', 'sarten@gmail.com', 'hash_abc123', '1991-01-19', '2025-04-15', 'Uruguay', 'Activa'),
+('usuario_aislado', 'aislado@gmail.com', 'hash_abc123', '1997-08-08', '2025-05-01', 'Venezuela', 'Activa'),
+('otro_lurker', 'lurker@gmail.com', 'hash_abc123', '1993-02-14', '2025-05-10', 'España', 'Activa');
+
+INSERT INTO Biblioteca (ID_Usuario, ID_Producto, Horas_Jugadas, Fecha_Ultima_Sesion) VALUES 
+(1, 2, 45.50, '2026-06-01 10:00:00'),
+(2, 2, 60.00, '2026-06-02 11:30:00'),
+(3, 2, 30.20, '2026-06-03 14:15:00'),
+(4, 2, 15.80, '2026-06-04 09:00:00'),
+(5, 2, 80.40, '2026-06-05 20:00:00'),
+(6, 2, 22.10, '2026-06-06 18:45:00'),
+(7, 2, 50.00, '2026-06-07 22:10:00'),
+(8, 2, 12.50, '2026-06-08 16:30:00');
+
+INSERT INTO Amistad_Usuario (ID_Usuario_Solicitante, ID_Usuario_Receptor, Fecha_Amistad, Estado_Amistad) VALUES 
+(1, 6, '2025-02-01', 'Aceptada'),
+(1, 7, '2025-02-02', 'Aceptada'),
+(1, 9, '2025-02-03', 'Aceptada'),
+(1, 5, '2025-02-04', 'Aceptada'),
+(2, 3, '2025-02-05', 'Aceptada'),
+(2, 6, '2025-02-06', 'Aceptada'),
+(2, 7, '2025-02-07', 'Aceptada'),
+(5, 1, '2025-02-08', 'Aceptada'),
+(5, 6, '2025-02-09', 'Aceptada'),
+(5, 8, '2025-02-10', 'Aceptada'),
+(3, 4, '2025-02-11', 'Pendiente'),
+(9, 10, '2025-02-12', 'Aceptada');
+
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) 
+VALUES ('Cyberpunk Ultimate', 'RPG futurista de mundo abierto.', 'Una experiencia inmersiva en una metrópolis cyberpunk.', '2024-01-10', 65.50, 'M', 89.99, 'Juego_Base', 88);
+
+DECLARE @ID_Juego1 INT = SCOPE_IDENTITY();
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) 
+VALUES ('Chrono Odyssey', 'MMORPG de acción y viajes en el tiempo.', 'Explora vastos mundos temporales con combates dinámicos.', '2024-03-15', 80.00, 'T', 99.99, 'Juego_Base', 91);
+
+DECLARE @ID_Juego2 INT = SCOPE_IDENTITY();
+
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) 
+VALUES (@ID_Juego1, 3, 3, 'Unreal Engine 5', 1, 1);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) 
+VALUES (@ID_Juego2, 4, 4, 'Unreal Engine 5', 0, 1);
+
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego1, 1, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego1, 2, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego1, 3, 1, 0, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego1, 4, 1, 0, 1);
+
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego2, 1, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego2, 2, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego2, 5, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (@ID_Juego2, 7, 1, 0, 1);
+
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('gamer_pro_1', 'pro1@gmail.com', 'hash123', '1995-05-12', '2025-01-10', 'Venezuela', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('gamer_pro_2', 'pro2@gmail.com', 'hash456', '1998-08-22', '2025-02-15', 'España', 'Activa');
+
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-9001', '2026-03-01 14:30:00', 1111, 0.00, 14.40, 2222, 1, 1);
+
+DECLARE @ID_Factura1 INT = SCOPE_IDENTITY();
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-9002', '2026-03-02 16:45:00', 1122, 0.00, 16.00, 2212, 2, 1);
+
+DECLARE @ID_Factura2 INT = SCOPE_IDENTITY();
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (@ID_Factura1, @ID_Juego1, 1222, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (@ID_Factura2, @ID_Juego2, 200, 0.00);
+
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('SimsMaster2026', 'simsmaster@gmail.com', 'hash_pwd_01', '1995-05-10', '2025-01-10', 'Venezuela', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('ArchitectSims', 'architect@gmail.com', 'hash_pwd_02', '1998-12-15', '2025-02-12', 'España', 'Activa');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('VirtualLifeFan', 'vlifefan@gmail.com', 'hash_pwd_03', '2000-03-20', '2025-03-01', 'México', 'Activa');
+
+
+INSERT INTO Mod (ID_Producto_Base, ID_Mod, Nombre_Mod, Descripcion_Mod, Tamano_MB) 
+VALUES (1, 1, 'Custom Content Pack', 'Ropa y accesorios personalizados para tus Sims.', 250.50);
+
+INSERT INTO Mod (ID_Producto_Base, ID_Mod, Nombre_Mod, Descripcion_Mod, Tamano_MB) 
+VALUES (1, 2, 'Realism Mod', 'Mejora profunda en las interacciones sociales.', 120.00);
+
+INSERT INTO Mod (ID_Producto_Base, ID_Mod, Nombre_Mod, Descripcion_Mod, Tamano_MB) 
+VALUES (1, 3, 'Building Overhaul', 'Nuevas herramientas y texturas de construcción.', 450.20);
+
+
+INSERT INTO Suscripcion_Mod (ID_Usuario, ID_Producto_Base, ID_Mod, Fecha_Suscripcion) 
+VALUES (1, 1, 1, '2025-01-15');
+
+INSERT INTO Suscripcion_Mod (ID_Usuario, ID_Producto_Base, ID_Mod, Fecha_Suscripcion) 
+VALUES (2, 1, 2, '2025-02-15');
+
+INSERT INTO Suscripcion_Mod (ID_Usuario, ID_Producto_Base, ID_Mod, Fecha_Suscripcion) 
+VALUES (3, 1, 3, '2025-03-05');
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-SIMS-001', '2025-01-11 14:00:00', 39.99, 0.00, 6.40, 46.39, 1, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-SIMS-002', '2025-01-12 15:30:00', 99.95, 0.00, 15.99, 115.94, 1, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-SIMS-003', '2025-02-13 10:00:00', 39.99, 0.00, 6.40, 46.39, 2, 2);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-SIMS-004', '2025-02-14 11:00:00', 99.95, 0.00, 15.99, 115.94, 2, 2);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-SIMS-005', '2025-03-02 12:00:00', 39.99, 0.00, 6.40, 46.39, 3, 3);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) 
+VALUES ('TXN-SIMS-006', '2025-03-03 13:00:00', 99.95, 0.00, 15.99, 115.94, 3, 3);
+
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (1, 1, 39.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (3, 1, 39.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) 
+VALUES (5, 1, 39.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 301, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 302, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 303, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 304, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (2, 305, 19.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 301, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 302, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 303, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 304, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (4, 305, 19.99, 0.00);
+
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 301, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 302, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 303, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 304, 19.99, 0.00);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (6, 305, 19.99, 0.00);
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (1, 2, 1, '2025-06-10 14:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (1, 2, 2, '2025-06-11 15:20:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (1, 2, 3, '2025-06-12 16:10:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (1, 2, 4, '2025-06-13 17:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (1, 2, 5, '2025-06-14 18:40:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (1, 2, 6, '2025-06-15 19:15:00');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (2, 2, 1, '2025-07-01 10:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (2, 2, 2, '2025-07-02 11:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (2, 2, 3, '2025-07-03 12:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (2, 2, 4, '2025-07-04 13:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (2, 2, 5, '2025-07-05 14:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (2, 2, 6, '2025-07-06 15:00:00');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (3, 2, 1, '2025-08-10 09:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (3, 2, 2, '2025-08-11 10:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (3, 2, 3, '2025-08-12 11:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (3, 2, 4, '2025-08-13 12:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (3, 2, 5, '2025-08-14 13:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (3, 2, 6, '2025-08-15 14:30:00');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (4, 2, 1, '2025-09-01 16:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (4, 2, 2, '2025-09-02 16:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (4, 2, 3, '2025-09-03 17:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (4, 2, 4, '2025-09-04 17:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (4, 2, 5, '2025-09-05 18:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (4, 2, 6, '2025-09-06 18:30:00');
+
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (5, 2, 1, '2025-10-01 12:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (5, 2, 2, '2025-10-02 12:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (5, 2, 3, '2025-10-03 13:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (5, 2, 4, '2025-10-04 13:30:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (5, 2, 5, '2025-10-05 14:00:00');
+INSERT INTO Desbloqueo_Logro (ID_Usuario, ID_Juego_Base, ID_Logro, Fecha_Desbloqueo) VALUES (5, 2, 6, '2025-10-06 14:30:00');
+
+INSERT INTO Usuario (Nickname, Correo, Contrasena_Hash, Fecha_Nacimiento, Fecha_Registro, Pais_Residencia, Estado_Cuenta) 
+VALUES ('CyberGamer2026', 'cybergamer2026@gmail.com', 'hash_password_secure', '1995-04-12', '2025-01-10', 'Estados Unidos', 'Activa');
+
+INSERT INTO Producto_Digital (Titulo, Descripcion_Corta, Descripcion_Larga, Fecha_Lanzamiento, Tamano_GB, Clasificacion_Edad, Precio_Base_Actual, Tipo_Producto, Metacritic_Score) 
+VALUES ('Cyberpunk Chronicles 2026', 'Un RPG de mundo abierto revolucionario.', 'Una experiencia de rol inigualable con gráficos de última generación y una narrativa profunda.', '2026-02-01', 85.00, 'M', 120.00, 'Juego_Base', 95);
+
+INSERT INTO Juego_Base (ID_Producto, ID_Estudio_Dev, ID_Publisher, Motor_Grafico, Tiene_Compras_InGame, Soporta_Cloud_Saves) 
+VALUES (305, 1, 1, 'Unreal Engine 5', 1, 1);
+
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (305, 1, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (305, 2, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (305, 3, 1, 1, 1);
+INSERT INTO Soporte_Idioma (ID_Producto, ID_Idioma, Soporta_Interfaz, Soporta_Audio, Soporta_Subtitulos) VALUES (305, 4, 1, 1, 1);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0001', '2026-03-01 10:00:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0002', '2026-03-01 10:05:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0003', '2026-03-01 10:10:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0004', '2026-03-01 10:15:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0005', '2026-03-01 10:20:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0006', '2026-03-01 10:25:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0007', '2026-03-01 10:30:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0008', '2026-03-01 10:35:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0009', '2026-03-01 10:40:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0010', '2026-03-01 10:45:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0011', '2026-03-01 10:50:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0012', '2026-03-01 10:55:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0013', '2026-03-01 11:00:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0014', '2026-03-01 11:05:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0015', '2026-03-01 11:10:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0016', '2026-03-01 11:15:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0017', '2026-03-01 11:20:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0018', '2026-03-01 11:25:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0019', '2026-03-01 11:30:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0020', '2026-03-01 11:35:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0021', '2026-03-01 11:40:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0022', '2026-03-01 11:45:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0023', '2026-03-01 11:50:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0024', '2026-03-01 11:55:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0025', '2026-03-01 12:00:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0026', '2026-03-01 12:05:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0027', '2026-03-01 12:10:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0028', '2026-03-01 12:15:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0029', '2026-03-01 12:20:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0030', '2026-03-01 12:25:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0031', '2026-03-01 12:30:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0032', '2026-03-01 12:35:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0033', '2026-03-01 12:40:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0034', '2026-03-01 12:45:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0035', '2026-03-01 12:50:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0036', '2026-03-01 12:55:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0037', '2026-03-01 13:00:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0038', '2026-03-01 13:05:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0039', '2026-03-01 13:10:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 305, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0040', '2026-03-01 13:15:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0041', '2026-03-01 13:20:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0042', '2026-03-01 13:25:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0043', '2026-03-01 13:30:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0044', '2026-03-01 13:35:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0045', '2026-03-01 13:40:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0046', '2026-03-01 13:45:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0047', '2026-03-01 13:50:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0048', '2026-03-01 13:55:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0049', '2026-03-01 14:00:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0050', '2026-03-01 14:05:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0051', '2026-03-01 14:10:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
+
+INSERT INTO Factura (Codigo_Transaccion, Fecha_Hora_Emision, Sub_Total, Monto_Descuento, Monto_Impuesto, Total_Pagado, ID_Usuario, ID_Metodo_Pago) VALUES ('TXN-2026-0052', '2026-03-01 14:15:00', 120.00, 0.00, 19.20, 139.20, 1, 1);
+INSERT INTO Detalle_Factura (ID_Factura, ID_Producto, Precio_Venta_Historico, Descuento_Aplicado_Pct) VALUES (@@IDENTITY, 306, 120.00, 0.00);
